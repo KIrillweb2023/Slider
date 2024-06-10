@@ -34,11 +34,12 @@ class Slider {
         })
     }
 
-    eventSliderTab = () => {
+    eventSlider = () => {
         this.removeClassSlide()
         this.addClassSlide(this.id)
         this.dottedClick()
         this.eventSliderScroll()
+        this.autoSliderScroll()
 
         window.addEventListener("keydown", (e) => {
             if(e.code === "ArrowDown" || e.code === "Space"){
@@ -69,9 +70,18 @@ class Slider {
             this.addClassSlide(this.id)
         })
     }
+
+    autoSliderScroll = () => {
+        setInterval(() => {
+            this.id <= 2 ? this.id += 1 : this.id = 0; 
+
+            this.removeClassSlide()
+            this.addClassSlide(this.id)
+        }, 5000)
+    }
 }
 
 const StartApp = new Slider()
-StartApp.eventSliderTab()
+StartApp.eventSlider()
 
 
