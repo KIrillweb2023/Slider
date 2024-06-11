@@ -44,22 +44,43 @@
     color: #fff;
     width: 600px;
 }
+.logo-text{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    padding-left: 10px;
+}
+
+.logo-text::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #ab2eff;
+    z-index: -1;
+}
 
 .slide-active{
     display: block;
 }
 
 .one{
-    background-color: #4B08D9;
+    background: url("./Slide-bg/horizon.png") center center / cover no-repeat;
 }
 .two{
-    background-color: #c808d9;
+    background: url("./Slide-bg/nfs.png") center center / cover no-repeat;
 }
 .three{
-    background-color: #d96d08;
+    background: url("./Slide-bg/spintaires.png") center center / cover no-repeat;
 }
 .for{
-    background-color: #089ed9;
+    background: url("./Slide-bg/stalker.png") center center / cover no-repeat;
 }
 
 /* .one{} */
@@ -68,11 +89,10 @@
     flex-direction: column;
     row-gap: 20px;
     position: absolute;
-    left: 20px;
+    left: 30px;
     top: 50%;
     transform: translateY(-50%);
 }
-
 
 .navigation-quad{
     width: 20px;
@@ -82,17 +102,18 @@
     transition: 0.2s all;
     cursor: pointer;
 }
+
 .navigation-quad:hover{
     background-color: #ffffff73;
 }
+
 .navigation-quad-active{
     background-color: #fff;
 }
 
 @keyframes slide-animation {
     0%{
-        /* height: 0; */
-        opacity: 0;
+        opacity: 0.6;
     }
     100%{
         opacity: 1;
